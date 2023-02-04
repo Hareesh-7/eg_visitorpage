@@ -1,0 +1,28 @@
+
+html,
+body {
+    width: 100%;
+    background: url(../img/Interiors_Slider.jpg) no-repeat fixed;
+    overflow: hidden;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+}
+
+.form-content .form-items {
+    border: 3px solid #fff;
+    background-color: #152733;
+    padding: 40px;
+    display: inline-block;
+    width: 100%;
+    min-width: 540px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
