@@ -1,5 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include_once('../php/connection.php');
+$mobile = $_GET['mobile'];
+echo $query = "select * from registration where mobile = '" . $mobile . "'";
+
+$result = $conn->query($query);
+
+$row = $result->fetch(PDO::FETCH_ASSOC);
+
+?>
+
+<!doctype html>
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +24,7 @@
 </head>
 
 <body>
+
     <header class="container-fluid navbar-dark bg-color">
         <nav class="navbar navbar-expand-lg container">
             <a class="navbar-brand" href="https://eswarigroup.com">
@@ -38,6 +50,7 @@
         </nav>
     </header>
 
+    
     <div class="container">
         <div class="form-holder">
             <div class="form-content">
@@ -51,46 +64,55 @@
                             <div class="card-body bg-dark text-white">
 
                                 <div class="container">
-                                    <form action="../php/registrationData.php" method="post" id="contact-form" role="form">
+                                    <form action="../php/update.php" method="post" id="contact-form" role="form">
                                         <div class="controls">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="form_name" class="text-white">Full Name</label>
-                                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Enter your full name " required="required" data-error="Firstname is required.">
+                                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Enter your full name " value="<?php echo $row['name']; ?>" required="required" data-error="Firstname is required.">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="form_mobile" class="text-white">Mobile</label>
-                                                        <input id="form_mobile" type="text" name="mobile" class="form-control" placeholder="Enter your mobile " required="required" data-error="mobile is required.">
+                                                        <input id="form_mobile" type="text" name="mobile" class="form-control" placeholder="Enter your mobile " value="<?php echo $row['mobile']; ?>" required="required" data-error="mobile is required.">
                                                     </div>
                                                 </div>
-                                                </div>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="form_email" class="text-white">Email</label>
-                                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Enter your email ">
+                                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Enter your email " value="<?php echo $row['email']; ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="form_password" class="text-white">Password</label>
-                                                        <input id="form_password" type="password" name="password" class="form-control" placeholder="Add your password ">
+                                                        <input id="form_password" type="password" name="password" class="form-control" placeholder="Add your password " value="<?php echo $row['password']; ?>">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-12 mt-3 mb-4">
-                                                    <input type="submit" name="register" class="btn btn-success btn-send  pt-2 btn-block" value="Register">
+                                                <div class="col-md-6">
+                                                    <div class="form-group border-info">
+                                                        <label for="form_user_type" class="text-white">User_Type</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <select name="user_type"  class="form-control col-md-12" id="form_user_type" >
+                                                            <option value="user">User</option>
+                                                            <option value="admin">Admin</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
-
                                             <div class="row">
-                                                <p>
-                                                    If already a registred user <a href="./index.php">click here</a> for login.
-                                                </p>
+                                                <div class="col-md-12 mt-3">
+                                                    <input type="submit" name="update" class="btn btn-success btn-send  pt-2 btn-block" value="Update User">
+                                                </div>
                                             </div>
 
                                         </div>
@@ -105,8 +127,64 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+    <div class="reg">
+        <h1>Update Form</h1>
+        <form action="../php/update.php" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>:</th>
+                    <td><input type="text" name="name" value="<?php echo $row['name']; ?>"></td>
+                </tr>
+                <tr>
+                    <th>Number</th>
+                    <th>:</th>
+                    <td><input type="number" name="mobile" value="<?php echo $row['mobile']; ?>"></td>
+                </tr>
+                <tr>
+                    <th>Email ID</th>
+                    <th>:</th>
+                    <td><input type="email" name="email" value="<?php echo $row['email']; ?>"></td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <th>:</th>
+                    <td><input type="text" name="password" value="<?php echo $row['password']; ?>"></td>
+                </tr>
+                <tr>
+                    <th>User Type</th>
+                    <th>:</th>
+                    <td><select name="user_type">
+                            <option>User</option>
+                            <option>Admin</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center">
+                        <input type="submit" value="UPDATE" name="update">
+                        <input type="reset" value="RESET" name="reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </div> -->
 </body>
 
 </html>

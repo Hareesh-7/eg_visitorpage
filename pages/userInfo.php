@@ -15,14 +15,14 @@
     <title>EG Visitor Portal - User Info</title>
     <link rel="shortcut icon" href="../img/EG-logo-rbg.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary container">
-            <a class="navbar-brand" href="#">
+    <header class="container-fluid navbar-dark bg-color">
+        <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="https://eswarigroup.com">
                 <img src="../img/EG-logo-rbg.png" alt="" height="60px" class="border-2">
             </a>    
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,7 +75,7 @@
                             <td scope='col'>
                                 <button type='button' class='btn btn-secondary' disabled>" . $row['user_type'] . "</button>
                             </td>
-                            <td scope='col'><a href=update.php?mobile=" . $row['mobile'] . " name=update>Update</a></td>
+                            <td scope='col'><a href=userUpdate.php?mobile=" . $row['mobile'] . " name=update>Update</a></td>
                             <td scope='col'><a href=../php/delete.php?mobile=" . $row['mobile'] . " name=delete>delete</a></td>
                         </tr>";
                 }

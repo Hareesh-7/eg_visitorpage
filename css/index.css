@@ -26,3 +26,6 @@ body {
     transition: all 0.4s ease;
 }
 
+.bg-color {
+    background-color: rgba(108, 117, 125, 0.5);
+}

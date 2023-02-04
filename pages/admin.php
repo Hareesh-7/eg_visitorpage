@@ -3,6 +3,16 @@
 	include('../php/connection.php');
 	$sql = "select * from visitordata";
 	$result = $conn->query($sql);
+
+    // session_start();
+    // $row = $result->fetch(PDO::FETCH_ASSOC);
+    // $name = $_SESSION[$mobile];
+    // echo $name;
+    
+    // if (isset($_SESSION["mobile"])) {
+    //     header("Location: index.php");
+    // } else {
+{
 ?>
 
 <!DOCTYPE html>
@@ -15,15 +25,15 @@
     <title>EG Visitor Portal - User Info</title>
     <link rel="shortcut icon" href="../img/EG-logo-rbg.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary container">
-            <a class="navbar-brand" href="#">
-                <img src="../img/EG-logo-rbg.png" alt="" height="60px" class="border-2">
+    <header class="container-fluid navbar-dark bg-color">
+        <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="https://eswarigroup.com">
+                <img src="../img/EG-logo-rbg.png" alt="Eswari Group logo" height="60px">
             </a>    
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -94,3 +104,7 @@
 </body>
 
 </html>
+
+<?php
+    }
+?>
