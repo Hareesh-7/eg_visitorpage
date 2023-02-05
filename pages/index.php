@@ -14,23 +14,23 @@
 <body>
 
     <header class="container-fluid navbar-dark bg-color">
-        <nav class="navbar navbar-expand-lg container">
+        <nav class="navbar navbar-expand-lg container-fluid">
             <a class="navbar-brand" href="https://eswarigroup.com">
-                <img src="../img/EG-logo-rbg.png" alt="" height="60px" class="border-2">
+                <img src="../img/EG-logo-rbg.png" alt="" height="90px" class="border-2">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <div class="collapse navbar-collapse mr-5 pb-5" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
 
-                <ul class="navbar-nav mt-2 mt-lg-0">
-                    <li class="nav-item">
+                <ul class="navbar-nav mt-2 mt-lg-0 mr-5">
+                    <li class="nav-item h4">
                         <a class="nav-link" href="../index.php">Home</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item active h4 font-weight-bold">
                         <a class="nav-link" href="index.php">Login</a>
                     </li>
                 </ul>
