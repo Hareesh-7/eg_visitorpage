@@ -1,7 +1,7 @@
 <?php
 include_once('../php/connection.php');
 $mobile = $_GET['mobile'];
-echo $query = "select * from registration where mobile = '" . $mobile . "'";
+$query = "select * from registration where mobile = '" . $mobile . "'";
 
 $result = $conn->query($query);
 
@@ -16,10 +16,9 @@ $row = $result->fetch(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EG Visitor Portal - User Registration</title>
+    <title>EG Visitor Portal - User Update</title>
     <link rel="shortcut icon" href="../img/EG-logo-rbg.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../css/index.css">
 </head>
 
