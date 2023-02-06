@@ -11,7 +11,8 @@
     if ($result->rowCount() > 0) {
         session_start();
         $row = $result->fetch(PDO::FETCH_ASSOC);
-        $_SESSION['registration'] = $row['mobile'];
+        $_SESSION['admin'] = $row['mobile'];
+        $_SESSION['user'] = $row['mobile'];
 
         if ($row['user_type'] == 'admin') {
             header('location:../pages/admin.php');
@@ -21,17 +22,19 @@
                     alert('Hii $row[name], Welcome to ESWARI GROUP Visitor Page ');
                     window.location.href='../index.php';
                 </script>
-            ";
-            // header('location:../index.php');
-           
+            ";           
         }
     } else {
         echo ("We are NOT getting your details from given details");
         echo "
-            <p>
-                If not a registered user <a href='../pages/registration.php'>click here</a> for registration.
-                <br><br>
-                If already a registered user <a href='../pages/index.php'>click here</a> for re-login.
-            </p>
+            <div style=margin:50px 50px'>
+                <p>
+                    If not a registered user <a href='../pages/registration.php'>click here</a> for registration.
+                </p>
+                <P>
+                    If already a registered user <a href='../pages/index.php'>click here</a> for re-login.
+                </p>
+            </div>
         ";
+
     }

@@ -5,10 +5,9 @@
 	$result = $conn->query($sql);
 
     session_start();
-    if (!$_SESSION["registration"]) {
+    if (!$_SESSION["admin"]) {
         header("Location: index.php");
     } else {
-
 ?>
 
 <!DOCTYPE html>
@@ -68,6 +67,7 @@
                             <th scope='col'>Email Address</th>
                             <th scope='col'>Need</th>
                             <th scope='col'>Message</th>
+                            <th scope='col'>Date & Time</th>
                             <th scope='col'>Delete</th>
                         </tr>
                 ";
@@ -80,8 +80,9 @@
                             <td scope='col'>" . $row['email'] . "</td>
                             <td scope='col'>" . $row['need'] . "</td>
                             <td scope='col'>" . $row['message'] . "</td>
+                            <td scope='col'>" . $row['date-time'] . "</td>
                             <td scope='col'>
-                                <a href=../php/delete.php?mobile=" . $row['mobile'] . " name=delete>delete</a>
+                                <a href=../php/delete.php?vid=" . $row['vid'] . " name=delete>delete</a>
                             </td>
                         </tr>";
                 }

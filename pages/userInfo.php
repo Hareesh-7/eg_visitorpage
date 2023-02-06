@@ -5,7 +5,7 @@
 	$result = $conn->query($sql);
 
     session_start();
-    if (!$_SESSION["registration"]) {
+    if (!$_SESSION["admin"]) {
         header("Location: index.php");
     } else {
 

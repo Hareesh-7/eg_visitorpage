@@ -1,6 +1,6 @@
 <?php
     session_start();
-    // unset($_SESSION["uid"]);
-    unset($_SESSION["registration"]);
+    unset($_SESSION["admin"]);
+    unset($_SESSION["user"]);
     header("Location:../index.php");
 ?>

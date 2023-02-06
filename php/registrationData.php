@@ -2,7 +2,6 @@
 <?php
 	include("connection.php");
 	if(isset($_POST['register'])) {
-		// $id = 2;
 		$name = $_POST['name'];
 		$mobile = $_POST['mobile'];
 		$email = $_POST['email'];

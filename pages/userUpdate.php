@@ -8,7 +8,7 @@
     $row = $result->fetch(PDO::FETCH_ASSOC);
 
     session_start();
-    if (!$_SESSION["registration"]) {
+    if (!$_SESSION["admin"]) {
         header("Location: index.php");
     } else {
 
@@ -134,64 +134,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-    <div class="reg">
-        <h1>Update Form</h1>
-        <form action="../php/update.php" method="post" enctype="multipart/form-data">
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>:</th>
-                    <td><input type="text" name="name" value="<?php echo $row['name']; ?>"></td>
-                </tr>
-                <tr>
-                    <th>Number</th>
-                    <th>:</th>
-                    <td><input type="number" name="mobile" value="<?php echo $row['mobile']; ?>"></td>
-                </tr>
-                <tr>
-                    <th>Email ID</th>
-                    <th>:</th>
-                    <td><input type="email" name="email" value="<?php echo $row['email']; ?>"></td>
-                </tr>
-                <tr>
-                    <th>Password</th>
-                    <th>:</th>
-                    <td><input type="text" name="password" value="<?php echo $row['password']; ?>"></td>
-                </tr>
-                <tr>
-                    <th>User Type</th>
-                    <th>:</th>
-                    <td><select name="user_type">
-                            <option>User</option>
-                            <option>Admin</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" style="text-align: center">
-                        <input type="submit" value="UPDATE" name="update">
-                        <input type="reset" value="RESET" name="reset">
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
-    </div> -->
 </body>
 
 </html>
